@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!-- saved from url=(0059)https://widget.coinlib.io/widget?type=converter&theme=light -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" async="" src="./analytics.js.download"></script><script async="" src="./js(1)"></script>
+<script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-109558606-2');
+        </script>
+
+<title>Coinlib Widget</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Coinlib Widget">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://widget.coinlib.io/static/img/coinlib_fb_card_1200x630.png?21278">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Coinlib Widget">
+<meta name="twitter:image" content="https://widget.coinlib.io/static/img/coinlib_tw_card_1200x675.png?21278">
+<meta name="twitter:site" content="@coinlibio">
+<meta property="og:url" content="https://widget.coinlib.io/widget?type=converter&amp;theme=light">
+<link rel="shortcut icon" href="https://widget.coinlib.io/static/img/favicon.png?21278">
+<link rel="icon" sizes="192x192" href="https://widget.coinlib.io/static/img/logo/dark192x192.png?21278">
+<link rel="apple-touch-icon" href="https://widget.coinlib.io/static/img/logo/dark152x152.png?21278">
+<link rel="apple-touch-icon" sizes="152x152" href="https://widget.coinlib.io/static/img/logo/dark152x152.png?21278">
+<link rel="apple-touch-icon" sizes="167x167" href="https://widget.coinlib.io/static/img/logo/dark167x167.png?21278">
+<link rel="apple-touch-icon" sizes="180x180" href="https://widget.coinlib.io/static/img/logo/dark180x180.png?21278">
+
+<link href="./bootstrap.min(1).css" rel="stylesheet">
+<link href="./bootstrap-select.min(1).css" rel="stylesheet">
+<link href="./fontawesome-all.min(1).css" rel="stylesheet">
+
+<link href="./light(1).css" rel="stylesheet">
+<link href="./dark(1).css" rel="stylesheet">
+<link href="./charts(1).css" rel="stylesheet">
+<!--[if lt IE 9]> <script src = "http://html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
+</head>
+<body marginwidth="0" marginheight="0">
+<div class="converter-widget"><form role="form" method="post" id="converter"><div class="form-group"><label>Amount</label><input type="text" id="converter_amount" class="form-control" value="1"></div><label>From</label><div class="form-group"><div class="input-group"><input type="text" class="form-control typeahead" autocomplete="off" placeholder="Crypto or fiat..." id="converter_from"><span class="input-group-append"><span class="input-group-text"><i class="fal fa-search"></i></span></span></div></div><label>To</label><div class="form-group"><div class="input-group"><input type="text" class="form-control typeahead" autocomplete="off" placeholder="Crypto or fiat..." id="converter_to"><span class="input-group-append"><span class="input-group-text"><i class="fal fa-search"></i></span></span></div></div><button class="btn btn-primary" onclick="Converter.convert(); return false;">Convert</button></form></div><div id="conversion" class="converter-footer"></div>
+<script src="./jquery.min.js(1).download"></script>
+<script src="./bootstrap.bundle.min.js(1).download"></script>
+<script src="./bootstrap-select.min.js(1).download"></script>
+<script src="./bootstrap3-typeahead.min.js(1).download"></script>
+<script src="./jquery.blockui.min.js(1).download"></script>
+<script src="./jquery.validate.js(1).download"></script>
+<script src="./custom.js(1).download"></script>
+<script src="./account.js(1).download"></script>
+<script src="./widget.js.download"></script>
+<script>
+        var fcm;  // Firebase Cloud Messaging
+        $().ready(function() {
+                        Settings.init('$');
+            
+if (window.ALL_COINS_ != undefined) {
+    new_ALL_COINS = [];
+    for (var coin_id in window.new_ALL_COINS) {
+        window.ALL_COINS_[coin_id] = new_ALL_COINS[coin_id];
+    }
+} else {
+    window.ALL_COINS_ = [];
+}            
+
+            // iOS: the new IE is here
+            if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+
+                // disable double tap zoom in iOS
+                $(document.head).append('<style>*{cursor:pointer;-webkit-tap-highlight-color:rgba(0,0,0,0)}</style>');
+
+                // disable pinch zoom in iOS
+                $(window).on('gesturestart touchmove', function (e) {
+                    if (e.originalEvent.scale !== 1) {
+                        e.originalEvent.preventDefault();
+                        document.body.style.transform = 'scale(1)';
+                    }
+                });
+
+                // fix curret misplacement (https://bugs.webkit.org/show_bug.cgi?id=176896)
+                $('body').addClass('iosBugFixCaret');
+            }
+
+            Generic.init(93589);
+            Account.init();
+        Converter.init();        });
+    </script>
+
+
+</body></html>
